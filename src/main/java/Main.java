@@ -1,11 +1,11 @@
-import com.amazonaws.regions.Regions;
-import com.amazonaws.services.cloudwatch.AmazonCloudWatchAsync;
-import com.amazonaws.services.cloudwatch.AmazonCloudWatchAsyncClientBuilder;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.cloudwatch.CloudWatchAsyncClient;
 import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Timer;
-import io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter;
-import io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter.Percentile;
+import io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter;
+import io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter.Percentile;
+import software.amazon.awssdk.services.cloudwatch.model.StandardUnit;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -39,10 +39,10 @@ public class Main {
             this.metricRegistry = new MetricRegistry();
             this.theTimer = metricRegistry.timer("TheTimer");
 
-            final AmazonCloudWatchAsync amazonCloudWatchAsync =
-                    AmazonCloudWatchAsyncClientBuilder
-                            .standard()
-                            .withRegion(Regions.US_WEST_2)
+            final CloudWatchAsyncClient amazonCloudWatchAsync =
+                    CloudWatchAsyncClient
+                            .builder()
+                            .region(Region.US_WEST_2)
                             .build();
 
             final CloudWatchReporter cloudWatchReporter =
@@ -58,6 +58,10 @@ public class Main {
                             .withArithmeticMean()
                             .withStdDev()
                             .withStatisticSet()
+                            .withZeroValuesSubmission()
+                            .withReportRawCountValue()
+                            .withHighResolution()
+                            .withMeterUnitSentToCW(StandardUnit.BYTES)
                             .withJvmMetrics()
                             .withGlobalDimensions("Region=us-west-2", "Instance=stage")
                             .withDryRun()

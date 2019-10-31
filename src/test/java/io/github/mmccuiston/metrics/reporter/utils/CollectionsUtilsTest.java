@@ -1,4 +1,4 @@
-package io.github.azagniotov.metrics.reporter.utils;
+package io.github.mmccuiston.metrics.reporter.utils;
 
 import org.junit.Test;
 
