@@ -3,8 +3,9 @@ import software.amazon.awssdk.services.cloudwatch.CloudWatchAsyncClient;
 import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Timer;
-import io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter;
-import io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter.Percentile;
+import io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter;
+import io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter.Percentile;
+import software.amazon.awssdk.services.cloudwatch.model.StandardUnit;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -57,6 +58,10 @@ public class Main {
                             .withArithmeticMean()
                             .withStdDev()
                             .withStatisticSet()
+                            .withZeroValuesSubmission()
+                            .withReportRawCountValue()
+                            .withHighResolution()
+                            .withMeterUnitSentToCW(StandardUnit.BYTES)
                             .withJvmMetrics()
                             .withGlobalDimensions("Region=us-west-2", "Instance=stage")
                             .withDryRun()

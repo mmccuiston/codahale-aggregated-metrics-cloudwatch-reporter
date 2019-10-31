@@ -1,4 +1,4 @@
-package io.github.azagniotov.metrics.reporter.cloudwatch;
+package io.github.mmccuiston.metrics.reporter.cloudwatch;
 
 import software.amazon.awssdk.services.cloudwatch.model.Dimension;
 import java.util.HashMap;

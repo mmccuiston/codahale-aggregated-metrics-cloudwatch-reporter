@@ -1,4 +1,4 @@
-package io.github.azagniotov.metrics.reporter.cloudwatch;
+package io.github.mmccuiston.metrics.reporter.cloudwatch;
 
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.junit.Assert.*;

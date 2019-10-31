@@ -10,18 +10,18 @@ modifyPom {
     project {
         name 'codahale-aggregated-metrics-cloudwatch-reporter'
         description 'This is a CloudWatch Reporter for the stable version of Dropwizard Metrics (formerly CodaHale & Yammer Metrics). The reporter is an implementation of ScheduledReporter from Dropwizard Metrics v3.1. Each reportable value in CodeHale Metric is reported as a separate MetricDatum'
-        url 'https://github.com/azagniotov/codahale-aggregated-metrics-cloudwatch-reporter'
-        inceptionYear '2016'
+        url 'https://github.com/mmccuiston/codahale-aggregated-metrics-cloudwatch-reporter'
+        inceptionYear '2019'
         packaging 'jar'
 
-        groupId "io.github.azagniotov"
+        groupId "io.github.mmccuiston"
         artifactId "dropwizard-metrics-cloudwatch"
         version "$version"
 
         scm {
-            url 'scm:git@github.com:azagniotov/codahale-aggregated-metrics-cloudwatch-reporter.git'
-            connection 'scm:git@github.com:azagniotov/codahale-aggregated-metrics-cloudwatch-reporter.git'
-            developerConnection 'scm:git@github.com:azagniotov/codahale-aggregated-metrics-cloudwatch-reporter.git'
+            url 'scm:git@github.com:mmccuiston/codahale-aggregated-metrics-cloudwatch-reporter.git'
+            connection 'scm:git@github.com:mmccuiston/codahale-aggregated-metrics-cloudwatch-reporter.git'
+            developerConnection 'scm:git@github.com:mmccuiston/codahale-aggregated-metrics-cloudwatch-reporter.git'
         }
 
         licenses {
@@ -34,9 +34,9 @@ modifyPom {
 
         developers {
             developer {
-                id 'azagniotov'
-                name 'Alexander Zagniotov'
-                email 'azagniotov@gmail.com'
+                id 'mmccuiston'
+                name 'Mitch McCuiston'
+                email 'mitch.mcc@gmail.com'
             }
         }
     }

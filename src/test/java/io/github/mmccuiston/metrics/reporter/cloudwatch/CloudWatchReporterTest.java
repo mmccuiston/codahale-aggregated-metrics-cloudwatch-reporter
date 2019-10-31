@@ -1,4 +1,4 @@
-package io.github.azagniotov.metrics.reporter.cloudwatch;
+package io.github.mmccuiston.metrics.reporter.cloudwatch;
 
 import software.amazon.awssdk.services.cloudwatch.CloudWatchAsyncClient;
 import software.amazon.awssdk.services.cloudwatch.model.Dimension;
@@ -32,12 +32,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import static com.google.common.truth.Truth.assertThat;
-import static io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_COUNT;
-import static io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_GAUGE;
-import static io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_NAME_TYPE;
-import static io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_SNAPSHOT_MEAN;
-import static io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_SNAPSHOT_STD_DEV;
-import static io.github.azagniotov.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_SNAPSHOT_SUMMARY;
+import static io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_COUNT;
+import static io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_GAUGE;
+import static io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_NAME_TYPE;
+import static io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_SNAPSHOT_MEAN;
+import static io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_SNAPSHOT_STD_DEV;
+import static io.github.mmccuiston.metrics.reporter.cloudwatch.CloudWatchReporter.DIMENSION_SNAPSHOT_SUMMARY;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;

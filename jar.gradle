@@ -12,8 +12,8 @@ jar {
         attributes 'Package': "${groupId}",
                 'Implementation-Title': "${artifactId}",
                 'Implementation-Version': "${version}",
-                'Implementation-Vendor': 'Alexander Zagniotov',
-                'Built-By': 'Alexander Zagniotov',
+                'Implementation-Vendor': 'Mitch McCuiston',
+                'Built-By': 'Mitch McCuiston',
                 'Built-Date': new Date().toString(),
                 'Built-With': "gradle-${project.getGradle().getGradleVersion()}, groovy-${GroovySystem.getVersion()}",
                 'Created-By': System.getProperty('java.version') + ' (' + System.getProperty('java.vendor') + ')'
